@@ -28,12 +28,6 @@ module.exports = {
         accessToken: 'b1789fb840706bd4a461289089651e2e',
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/images`,
-        name: 'images'
-      },
-       },
+    
   ],
 }
