@@ -26,7 +26,7 @@ module.exports = {
       resolve: 'gatsby-source-shopify2',
       options: {
         shopName: 'pjh-test',
-        accessToken: 'b1789fb840706bd4a461289089651e2e',
+        accessToken: '4c2e1a39502b1e07fbd8e51c63f5629a',
       },
     },
     

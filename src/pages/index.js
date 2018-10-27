@@ -1,8 +1,7 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from '../components/layout';
 import Img from 'gatsby-image';
-import styled from "styled-components";
 import Box from '../components/box';
 
 
@@ -19,12 +18,12 @@ export default ({ data }) => {
           <div key={node.id}>
 <Img fluid={node.images[0].localFile.childImageSharp.fluid}/>
 
-            <h3
+            <Link to={`/products/${node.handle}`}><h3
                
             >
               {node.title}
               
-            </h3>
+            </h3></Link>
 
             <p>USD ${node.variants[0].price} </p>
             <p> {node.vendor} </p>
