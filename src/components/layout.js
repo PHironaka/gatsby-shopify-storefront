@@ -3,7 +3,7 @@ import { StaticQuery, Link, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components";
 import Logo from '../components/logo';
 import Header from '../components/header';
-
+import Helmet from 'react-helmet';
 
 const GlobalStyle = createGlobalStyle`
  html, body, div, span, applet, object, iframe,
@@ -39,6 +39,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-size: 1.6rem;
+    font-family: 'Krub', sans-serif;
+
     color: #000;
     background-color: #fff;
     -webkit-text-size-adjust: 100%;
@@ -108,7 +110,7 @@ const GlobalStyle = createGlobalStyle`
 
 
 
-export default ({ children }) => (
+export default ({ children , title }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -121,8 +123,25 @@ export default ({ children }) => (
     `
 }
     render={data => (
+       <div>
+      <Helmet
+    key="app-head"
 
-      <div>
+    defaultTitle="Gatsby Shopify Template"
+  > 
+  <title>{title}</title>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="apple-mobile-web-app-title" content="peterhironaka.com" />
+    <meta name="application-name" content="peterhironaka.com" />
+    <meta name="theme-color" content="#c800ec" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c800ec" />
+    <link href="https://fonts.googleapis.com/css?family=Krub" rel="stylesheet" />
+  </Helmet>
+     
         <GlobalStyle />
         <div className="container">
         <Header>

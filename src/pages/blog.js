@@ -20,10 +20,8 @@ export default ({ data }) => {
               {node.title}
               
             </h3>
-<div
-  key={`body`}
-  dangerouslySetInnerHTML={{ __html: node.contentHtml }}
-/>
+<img src={node.image.src} alt={node.id} />
+           < p> {node.content} </p>
 
            
 
@@ -40,11 +38,12 @@ export default ({ data }) => {
 export const query = graphql`
   query {
 
-  allShopifyArticle (limit:4) {
+  allShopifyArticle (limit:7) {
     edges {
       node {
         id
         image {
+          src
           localFile {
             childImageSharp {
               fluid(maxWidth: 1000) {
